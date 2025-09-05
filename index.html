@@ -3,13 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Search Content Format</title>
+  <title>Công Cụ Tìm Format</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; }
-    h1 { text-align: center; }
-    input { width: 100%; padding: 10px; margin: 20px 0; font-size: 16px; }
-    .result { background: #f1f1f1; padding: 15px; margin-bottom: 10px; border-radius: 8px; }
-    .keyword { font-weight: bold; color: #0077cc; }
+    body { 
+      font-family: Arial, sans-serif; 
+      padding: 20px; 
+      max-width: 600px; 
+      margin: auto; 
+      background: #fafafa;
+      color: #333;
+    }
+    h1 { 
+      text-align: center; 
+      color: #0077cc;
+      margin-bottom: 10px;
+    }
+    p.note {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    input { 
+      width: 100%; 
+      padding: 12px; 
+      margin: 20px 0; 
+      font-size: 16px; 
+      border: 1px solid #ccc; 
+      border-radius: 8px;
+    }
+    .result { 
+      background: #f9f9f9; 
+      padding: 15px; 
+      margin-bottom: 15px; 
+      border-radius: 10px; 
+      border: 1px solid #ddd;
+    }
+    .keyword { 
+      font-weight: bold; 
+      color: #0077cc; 
+    }
+    .content {
+      display: block;
+      margin: 8px 0;
+      line-height: 1.5;
+    }
     button {
       padding: 6px 12px;
       background: #0077cc;
@@ -17,17 +55,18 @@
       border: none;
       border-radius: 6px;
       cursor: pointer;
-  }
-
-button:hover {
-  background: #005fa3;
-}
-
+      font-size: 14px;
+    }
+    button:hover {
+      background: #005fa3;
+    }
   </style>
 </head>
 <body>
-  <h1>🔎 Tìm Format Content</h1>
-  <input type="text" id="searchBox" placeholder="Nhập từ khóa...">
+  <h1>Nhập từ khóa vào bên dưới để tìm kiếm</h1>
+  <!-- <p class="note">Nhập từ khóa để tìm format phù hợp và bấm Copy để sử dụng nhanh</p> -->
+
+  <input type="text" id="searchBox" placeholder="🔍 Nhập từ khóa...">
   <div id="results"></div>
 
   <script src="script.js"></script>
