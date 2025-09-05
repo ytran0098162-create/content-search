@@ -15,10 +15,16 @@ document.getElementById("searchBox").addEventListener("input", function() {
   if (query.length > 0) {
     const results = formats.filter(f => f.keyword.toLowerCase().includes(query));
     if (results.length > 0) {
-      results.forEach(r => {
+      results.forEach((r, index) => {
         const div = document.createElement("div");
         div.classList.add("result");
-        div.innerHTML = `<span class="keyword">#${r.keyword}</span><br>${r.content}`;
+
+        // Tạo nội dung + nút Copy
+        div.innerHTML = `
+          <span class="keyword">#${r.keyword}</span><br>
+          <span class="content" id="content-${index}">${r.content}</span><br><br>
+          <button onclick="copyToClipboard('content-${index}')">📋 Copy</button>
+        `;
         resultsDiv.appendChild(div);
       });
     } else {
@@ -26,3 +32,11 @@ document.getElementById("searchBox").addEventListener("input", function() {
     }
   }
 });
+
+// Hàm copy
+function copyToClipboard(elementId) {
+  const text = document.getElementById(elementId).innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    alert("✅ Đã copy nội dung!");
+  });
+}
