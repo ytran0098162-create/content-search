@@ -29,7 +29,9 @@ document.getElementById("searchBox").addEventListener("input", function() {
             div.innerHTML = `
               <span class="keyword">#${r.keyword} - lựa chọn ${i+1}</span><br>
               <span class="content" id="content-${index}-${i}">${c}</span><br><br>
-              <button onclick="copyToClipboard('content-${index}-${i}')">📋 Copy</button>
+              <button onclick="copyToClipboard('content-${index}-${i}')">
+                <i class="fa-solid fa-copy"></i>
+              </button>
             `;
             resultsDiv.appendChild(div);
           });
@@ -40,7 +42,9 @@ document.getElementById("searchBox").addEventListener("input", function() {
           div.innerHTML = `
             <span class="keyword">#${r.keyword}</span><br>
             <span class="content" id="content-${index}">${r.content}</span><br><br>
-            <button onclick="copyToClipboard('content-${index}')">📋 Copy</button>
+            <button onclick="copyToClipboard('content-${index}')">
+              <i class="fa-solid fa-copy"></i>
+            </button>
           `;
           resultsDiv.appendChild(div);
         }
